@@ -1,4 +1,5 @@
 import requests
+from pprint import pprint
 
 available_currency_list = {
     "AUD": "Australian Dollar",
@@ -41,7 +42,7 @@ def currency_conversion():
             break
         else:
             print("Please input correct currency from below list!")
-            print(available_currency_list)
+            pprint(available_currency_list)
 
     while True:      
         to_currency = str(input("Please enter in the currency code you'd like to convert to: ")).upper()
@@ -70,7 +71,10 @@ while True:
         user_option = int(input("1. List of Currency code by Currency names\n2. Real Time Convert Converter\n3. Historical Exchange Rate\nPlease select an option: "))
         
         if user_option == 1:
-            pass
+            pprint(available_currency_list)
+            nested_user_option = bool(input("Type anything if you want to proceed to currency conversion, or hit Enter if you want to exit the program: "))
+            if nested_user_option == True:
+                currency_conversion()
             break
     
         elif user_option == 2:
