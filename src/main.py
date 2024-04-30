@@ -1,11 +1,11 @@
 import requests
 import json
 from pprint import pprint
-from datetime import datetime
+from datetime import datetime, date
 
 BASE_URL = "https://api.frankfurter.app"
-
-available_currency_list = {
+today = date.today()
+currency_list = {
     "AUD": "Australian Dollar",
     "BGN": "Bulgarian Lev",
     "BRL": "Brazilian Real",
@@ -43,22 +43,22 @@ def real_time_currency_conversion():
     while True:
         from_currency = str(input("Please enter in the currency code you'd like to convert from: ")).upper()
         
-        if from_currency in available_currency_list:
+        if from_currency in currency_list:
             break
         
         else:
             print("Please input correct currency from below list!")
-            pprint(available_currency_list)
+            pprint(currency_list)
 
     while True:      
         to_currency = str(input("Please enter in the currency code you'd like to convert to: ")).upper()
         
-        if to_currency in available_currency_list:
+        if to_currency in currency_list:
             break
         
         else:
             print("Please input correct currency code from below list!")
-            print(available_currency_list)
+            print(currency_list)
 
     while True:
         try:
@@ -71,7 +71,7 @@ def real_time_currency_conversion():
     response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_currency}&to={to_currency}")
 
     if response.status_code == 200:
-        print(f"{amount} {from_currency} is {response.json()['rates'][to_currency]} {to_currency}")
+        print(f"{amount} {from_currency} is {response.json()['rates'][to_currency]} {to_currency} on {today}")
     else:
         print("Rates fetching from data source is not successful, please try our rates exchange converter later")
         
@@ -86,24 +86,48 @@ def get_url(url):
         return None, None
 
 def get_historical_rate():
-    from_currency = str(input("Please enter in the currency code you'd like to convert from: ")).upper()
-    to_currency = str(input("Please enter in the currency code you'd like to convert to: ")).upper()
-    amount = float(input("Enter the amount to be converted: "))
+    while True:
+        from_currency = str(input("Please enter in the currency code you'd like to convert from: ")).upper()
+        
+        if from_currency in currency_list:
+            break
+        
+        else:
+            print("Please input correct currency from below list!")
+            pprint(currency_list)
+
+    while True:      
+        to_currency = str(input("Please enter in the currency code you'd like to convert to: ")).upper()
+        
+        if to_currency in currency_list:
+            break
+        
+        else:
+            print("Please input correct currency code from below list!")
+            print(currency_list)
     
-    date_str = input("Please enter date in YYYY-MM-DD format: ")
-    date_format = "%Y-%m-%d"
-
-    from_date_with_time = datetime.strptime(date_str, date_format)
-    from_date = datetime.date(from_date_with_time)
-
-    url = f"{BASE_URL}/{from_date}?from={from_currency}&to={to_currency}&amount={amount}"
-    status_code, content = get_url(url)
+    while True:   
+        try:
+            date_str = input("Please enter date in YYYY-MM-DD format: ")
+            date_format = "%Y-%m-%d"
+            chosen_date_with_time = datetime.strptime(date_str, date_format)
+            chosen_date = datetime.date(chosen_date_with_time)
+            break
+        except:
+            print("Please input date in YYYY-MM-DD format only!")
+    
+    if chosen_date < today:
+        chosen_date = chosen_date
+    else:
+        print("Please only put historical date, and since you put a future date we will use realtime currency converter")
+        chosen_date = today
+        
+    status_code, content = get_url(f"{BASE_URL}/{chosen_date}?from={from_currency}&to={to_currency}&amount=100")
     
     # if status_code == 200:
     data = json.loads(content)
     rate = data.get("rates", {}).get(to_currency)
-        # converted_amount = amount * historical_rate
-    print(f"100{from_currency} was {rate}{to_currency} on {from_date}")
+    print(f"100{from_currency} was {rate}{to_currency} on {chosen_date}")
     # else:
     #     return None
 
@@ -112,7 +136,7 @@ while True:
         user_option = int(input("1. List of Currency code by Currency names\n2. Real Time Convert Converter\n3. Historical Exchange Rate\nPlease select an option: "))
         
         if user_option == 1:
-            pprint(available_currency_list)
+            pprint(currency_list)
             nested_user_option = bool(input("Type anything if you want to proceed to currency conversion, or hit Enter if you want to exit the program: "))
             if nested_user_option == True:
                 real_time_currency_conversion()
@@ -127,9 +151,10 @@ while True:
             break
         
         else:
-            print("Please only select 1, 2 or 3")
-            
+            print("Please input 1,2 or 3 only")
+    
     except ValueError:
-        print("Please input only 1, 2 or 3, not text!")
+        print("Please input 1,2 or 3 only")
+        
         
 
