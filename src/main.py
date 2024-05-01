@@ -67,12 +67,14 @@ def real_time_currency_conversion():
         
         except ValueError:
             print("Please input a number!")     
-    
-    response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_currency}&to={to_currency}")
 
-    if response.status_code == 200:
-        print(f"{amount} {from_currency} is {response.json()['rates'][to_currency]} {to_currency} on {TODAY}")
-    else:
+    try:
+        response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_currency}&to={to_currency}")
+        if response.status_code == 200:
+            print(f"{amount}{from_currency} is {response.json()['rates'][to_currency]}{to_currency} on {TODAY}")
+        else:
+            print("Rates fetching from data source is not successful, please try our rates exchange converter later")
+    except:
         print("Rates fetching from data source is not successful, please try our rates exchange converter later")
         
 def get_url(url):
@@ -82,7 +84,6 @@ def get_url(url):
         content = response.text
         return status_code, content
     except requests.exceptions.RequestException as e:
-        print(f"Error making GET request: {e}")
         return None, None
 
 def get_historical_rate():
@@ -121,15 +122,17 @@ def get_historical_rate():
     else:
         print("Please only put historical date, and since you put a future date we will use realtime currency converter")
         chosen_date = TODAY
-        
-    status_code, content = get_url(f"{BASE_URL}/{chosen_date}?from={from_currency}&to={to_currency}&amount=100")
     
-    if status_code == 200:
-        data = json.loads(content)
-        rate = data.get("rates", {}).get(to_currency)
-        print(f"100{from_currency} was {rate}{to_currency} on {chosen_date}")
-    else:
-        return None
+    try:
+        status_code, content = get_url(f"{BASE_URL}/{chosen_date}?from={from_currency}&to={to_currency}&amount=100")
+        if status_code == 200:
+            data = json.loads(content)
+            rate = data.get("rates", {}).get(to_currency)
+            print(f"100{from_currency} was {rate}{to_currency} on {chosen_date}")
+        else:
+            print("Rates fetching from data source is not successful, please try our rates exchange converter later")
+    except:
+        print("Rates fetching from data source is not successful, please try our rates exchange converter later")
 
 def main():
     while True:
