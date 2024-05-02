@@ -72,7 +72,7 @@ def real_time_currency_conversion():
         except ValueError:  # Error handling to make sure user is putting in numbers
             print("Please input a number!")     
 
-    try:
+    try:  # Currency converter for TODAY's date
         response = requests.get(f"https://api.frankfurter.app/latest?amount={amount}&from={from_currency}&to={to_currency}")
         if response.status_code == 200:
             print(f"{amount}{from_currency} is {response.json()['rates'][to_currency]}{to_currency} on {TODAY}")
@@ -82,7 +82,7 @@ def real_time_currency_conversion():
         print("Rates fetching from data source is not successful, please try our rates exchange converter later")
 
 
-def get_url(url):
+def get_url(url):  # To return retrieve status code and return relevant information/rates
     try:
         response = requests.get(url)
         status_code = response.status_code
