@@ -1,11 +1,14 @@
+# Import external modules/libraries
 import requests
+# Import built-in modules/libraries
 import json
 from pprint import pprint
 from datetime import datetime, date
 
-BASE_URL = "https://api.frankfurter.app"
-TODAY = date.today()
-CURRENCY_LIST = {
+# Constants assignment
+BASE_URL = "https://api.frankfurter.app" # External API url
+TODAY = date.today() # Today's date using date function from datetime
+CURRENCY_LIST = { 
     "AUD": "Australian Dollar",
     "BGN": "Bulgarian Lev",
     "BRL": "Brazilian Real",
@@ -37,35 +40,36 @@ CURRENCY_LIST = {
     "TRY": "Turkish Lira",
     "USD": "United States Dollar",
     "ZAR": "South African Rand"
-} 
+} # Currency codes
 
+# Feature 1: allow users to access currency codes
+def access_currency_list():
+    pprint(CURRENCY_LIST)
+
+# Feature 2: real time currency converter
 def real_time_currency_conversion():
-    while True:
+    while True:  # Loop to check whether user is putting in a valid currency code to convert from
         from_currency = str(input("Please enter in the currency code you'd like to convert from: ")).upper()
-        
         if from_currency in CURRENCY_LIST:
             break
-        
         else:
             print("Please input correct currency from below list!")
             pprint(CURRENCY_LIST)
 
-    while True:      
+    while True:  # Loop to check whether user is putting in a valid currency code to convert to
         to_currency = str(input("Please enter in the currency code you'd like to convert to: ")).upper()
-        
         if to_currency in CURRENCY_LIST:
             break
-        
         else:
             print("Please input correct currency code from below list!")
             print(CURRENCY_LIST)
 
-    while True:
+    while True:  # Loop to check whether user is putting in numbers
         try:
             amount = float(input("Please enter in the amount of money: "))
             break
         
-        except ValueError:
+        except ValueError:  # Error handling to make sure user is putting in numbers
             print("Please input a number!")     
 
     try:
@@ -76,15 +80,18 @@ def real_time_currency_conversion():
             print("Rates fetching from data source is not successful, please try our rates exchange converter later")
     except:
         print("Rates fetching from data source is not successful, please try our rates exchange converter later")
-        
+
+
 def get_url(url):
     try:
         response = requests.get(url)
         status_code = response.status_code
         content = response.text
         return status_code, content
+    
     except requests.exceptions.RequestException as e:
         return None, None
+
 
 def get_historical_rate():
     while True:
@@ -114,6 +121,7 @@ def get_historical_rate():
             chosen_date_with_time = datetime.strptime(date_str, date_format)
             chosen_date = datetime.date(chosen_date_with_time)
             break
+        
         except:
             print("Please input date in YYYY-MM-DD format only!")
     
@@ -131,8 +139,10 @@ def get_historical_rate():
             print(f"100{from_currency} was {rate}{to_currency} on {chosen_date}")
         else:
             print("Rates fetching from data source is not successful, please try our rates exchange converter later")
+    
     except:
         print("Rates fetching from data source is not successful, please try our rates exchange converter later")
+
 
 def main():
     while True:
@@ -140,8 +150,9 @@ def main():
             user_option = int(input("Welcome to the currency converter!\n\n1. List of Currency code by Currency names\n2. Real Time Convert Converter\n3. Historical Exchange Rate\n4. Exit the function\n\nPlease select an option: "))
         
             if user_option == 1:
-                pprint(CURRENCY_LIST)
+                access_currency_list()
                 nested_user_option = bool(input("Type anything if you want to proceed to currency conversion, or hit Enter if you want to exit the program: "))
+                
                 if nested_user_option == True:
                     real_time_currency_conversion()
                 break
@@ -164,6 +175,6 @@ def main():
             print("ERROR: Please input 1,2,3 or 4 only")
 
 main()
-        
+
         
 
