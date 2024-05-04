@@ -30,7 +30,7 @@ Installation of the above dependencies, if needed, are included in `run.sh` scri
 
 ## How to Run the Program
 
-Windows users need to install [Windows Subsystem for Linux (WSL)]first(https://learn.microsoft.com/en-us/windows/wsl/install).
+Windows users need to install Windows Subsystem for Linux (WSL) first(https://learn.microsoft.com/en-us/windows/wsl/install).
 
 1. Open a terminal.
 
