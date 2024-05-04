@@ -16,7 +16,7 @@ Link to the GitHub repository can be found [here](https://github.com/kimyu0112/t
 
 ### Prerequisites
 - Python 3.10.10
-- Pip 23.0.1
+- Pip
 - Bash shell
 - Git
 

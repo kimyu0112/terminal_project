@@ -82,7 +82,7 @@ def real_time_currency_conversion():
         print("Rates fetching from data source is not successful, please try our rates exchange converter later")
 
 
-def get_url(url):  # To return retrieve status code and return relevant information/rates
+def get_url(url):  # To return retrieve status code and return relevant information/rates source code referenced: https://github.com/hemangsharma/94692_Data_Science_Practice_Assignment_2/tree/main
     try:
         response = requests.get(url)
         status_code = response.status_code
@@ -132,7 +132,7 @@ def get_historical_rate():
         print("Please only put historical date, and since you put a future date we will use realtime currency converter")
         chosen_date = TODAY
     
-    try:  #Historical currency converter
+    try:  #Historical currency converter source code referenced: https://github.com/hemangsharma/94692_Data_Science_Practice_Assignment_2/tree/main
         status_code, content = get_url(f"{BASE_URL}/{chosen_date}?from={from_currency}&to={to_currency}&amount=100")
         if status_code == 200:
             data = json.loads(content)
@@ -153,7 +153,7 @@ def main():
             if user_option == 1:  
                 access_currency_list()  #Provide list of currency codes for users
                 nested_user_option = bool(input("Type anything if you want to proceed to currency conversion, or hit Enter if you want to exit the program: "))  #Ask user if they want to access realtime currency converter
-                #  If yess #Call realtime currency converter
+                #  If yes #Call realtime currency converter
                 if nested_user_option == True:
                     real_time_currency_conversion() 
                 break
