@@ -146,7 +146,7 @@ def get_historical_rate():
 
 # User options interface
 def main():
-    while True:
+    while True: # Loop to check whether user is putting in a valid option number
         try:
             user_option = int(input("Welcome to the currency converter!\n\n1. List of Currency code by Currency names\n2. Real Time Convert Converter\n3. Historical Exchange Rate\n4. Exit the function\n\nPlease select an option: "))
         
