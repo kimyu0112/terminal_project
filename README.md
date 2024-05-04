@@ -52,10 +52,12 @@ Windows users need to install [Windows Subsystem for Linux (WSL)]first(https://l
 ## Code Logic
 
 - **Realtime currency converter**: 
+  1. The function for the realtime currency converter includes a While True loop to ensure that users enter valid currency codes from the CURRENCY_LIST. If the user enters an invalid code, the app will display a list of valid codes and prompt the user to enter a valid code. The loop will continue until the user enters a valid code. This same logic is used for all user inputs in the app.
+  2. After user input is validated, the system will fetch the real-time currency rate from an external API. If the fetching process is successful, which will be validated by an "if" function checking if the response code is 200, the system will print out the result of the currency conversion. Error handling is done through an "if/else" statement that checks if the data is fetched successfully, as well as through the use of "try/except" blocks to handle other exceptions.
 
 - **Historical currency converter**: 
 
-- **List of currency codes**: 
+- **List of currency codes**: a simple function is set up such that when it is called a list of currency codes is printed. The Pprint built-in python module is used in the app to provide users with clearer structure of the list, making it easier to check currency codes.
 
 ## Code Style Guide
 
