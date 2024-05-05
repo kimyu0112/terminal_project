@@ -154,3 +154,6 @@ Loewen, C., (2024) What is Windows Subsystem for Linux, learn.microsoft.com. Ava
 
 
 Sharma, H 2023, hemangsharma/94692_Data_Science_Practice_Assignment_2, GitHub, viewed 5 May 2024, <https://github.com/hemangsharma/94692_Data_Science_Practice_Assignment_2/tree/main>.
+
+
+jww 2018, Detect python version in shell script, Stack Overflow, viewed 5 May 2024, <https://stackoverflow.com/questions/6141581/detect-python-version-in-shell-script>.
