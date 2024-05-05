@@ -139,3 +139,11 @@ I have also broken it down into a list below:
 - Zip the files and submit to Canvas before 23:55
 
 ![Submission Task](/docs/Assignment%20Submission%20Due.png)
+
+## REFERENCES
+
+Van Rossum, G., Warsaw, B. and Coghlan, A. (2001) PEP 8 – Style Guide for Python Code. Available at: https://peps.python.org/pep-0008/ (Accessed: 25 April 2024).
+
+
+Loewen, C., (2024) What is Windows Subsystem for Linux, learn.microsoft.com. Available at: https://learn.microsoft.com/en-us/windows/wsl/about.
+
