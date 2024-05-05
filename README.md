@@ -80,6 +80,8 @@ I have also broken it down into a list below:
 - Error handling if there are any
 - Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
 
+![Feature 1 Completed](/docs/Feature%201%20Completed.png)
+
 #### Priority feature 2 realtime currency converter - deadline 01/05/24 
 - Complete coding of function
   - researched ways to ensure user input is valid (While True loop)
