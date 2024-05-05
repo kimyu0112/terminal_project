@@ -69,7 +69,7 @@ This project follows the [PEP 8](https://pep8.org/) style guide for Python code.
 
 I utilized Trello platform to track implementation of my project. 
 
-[Trello Project Tasks](/docs/Trello%20Tasks%20Overview.png)
+![Trello Project Tasks](/docs/Trello%20Tasks%20Overview.png)
 
 I have also broken it down into a list below:
 
