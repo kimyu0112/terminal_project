@@ -66,12 +66,26 @@ Windows users need to install Windows Subsystem for Linux (WSL) first(https://le
 This project follows the [PEP 8](https://pep8.org/) style guide for Python code.
 
 ## Implementation Plan
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
 
-Utilise a suitable project management platform to track this implementation plan.
+I utilized Trello platform to track implementation of my project. I have also broken it down into a list below:
 
-Provide screenshots/images and/or a reference to an accessible project management platform used to track this implementation plan. 
+#### Feature 1 - deadline 24/04/24
+- Complete coding (simple print function)
+- Write inline and block comments to explain code
+- Test the function to ensure function could work without any issues
+- Error handling if there are any
+- Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
 
-> Your checklists for each feature should have at least 5 items.
+#### Feature 2
+- 
+#### Feature 3
+- 
+
+#### User options
+- 
+
+#### User manual
+- 
+
+#### Assignment submission
+- 
