@@ -112,7 +112,13 @@ I have also broken it down into a list below:
 - Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
 
 #### User manual - deadline 04/05/24
-- 
+- Bash script to check python installation
+- Bash script to create venv environment
+- Bash script to run the main app
+  - Clone git repository
+  - Activate venv environment
+- System specific instructions on how to run the app (Windows users have to install WSL)
+- Combine them into a user manual
 
 #### Assignment submission - deadline 05/05/24
 - 
