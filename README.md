@@ -6,11 +6,14 @@ Currency Converter App is a terminal-based application that allows users to conv
 
 ### Features
 
-- **Realtime currency converter**: Users can enter the amount, the currencies they want to conver from and convert to. The app will calculate result using real-time exchange rates fetched from external API Frankfurter.
+- **Realtime currency converter**
+  Users can enter the amount, the currencies they want to conver from and convert to. The app will calculate result using real-time exchange rates fetched from external API Frankfurter.
 
-- **Historical currency converter**: This feature allows users to choose a specific historical date for currency conversion.
+- **Historical currency converter**
+  This feature allows users to choose a specific historical date for currency conversion.
 
-- **List of currency codes**: List of currency codes is provided to assist users who are unsure of the appropriate codes to use.
+- **List of currency codes**
+  List of currency codes is provided to assist users who are unsure of the appropriate codes to use.
 
 Link to the GitHub repository can be found [here](https://github.com/kimyu0112/terminal_project).
 
@@ -40,6 +43,7 @@ Windows users need to install Windows Subsystem for Linux (WSL) first(https://le
     ```sh
     git clone https://github.com/kimyu0112/terminal_project.git
     ```
+
 3. Navigate to the `/src` folder.
     ```sh
     cd ./terminal_project
@@ -49,6 +53,7 @@ Windows users need to install Windows Subsystem for Linux (WSL) first(https://le
     ```sh
     chmod +x run.sh
     ```
+
 5. Run the run.sh script.
     ```sh
     ./run.sh
@@ -147,3 +152,5 @@ Van Rossum, G., Warsaw, B. and Coghlan, A. (2001) PEP 8 – Style Guide for Pyth
 
 Loewen, C., (2024) What is Windows Subsystem for Linux, learn.microsoft.com. Available at: https://learn.microsoft.com/en-us/windows/wsl/about.
 
+
+Sharma, H 2023, hemangsharma/94692_Data_Science_Practice_Assignment_2, GitHub, viewed 5 May 2024, <https://github.com/hemangsharma/94692_Data_Science_Practice_Assignment_2/tree/main>.
