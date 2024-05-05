@@ -129,9 +129,11 @@ I have also broken it down into a list below:
 - System specific instructions on how to run the app (Windows users have to install WSL)
 - Combine them into a user manual
 
+![User Manual](/docs/User%20Manual%20Completed.png)
+
 #### Assignment submission - deadline 05/05/24
 - Finish up README.md as per assignment requirement
 - Check whether folder organization is as per assignment requirement
 - Add proper referencing and acknowledgement
 - Push the codes to Git
-- Zip the files and submit to Canvas  before 23:55
+- Zip the files and submit to Canvas before 23:55
