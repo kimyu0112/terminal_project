@@ -137,3 +137,5 @@ I have also broken it down into a list below:
 - Add proper referencing and acknowledgement
 - Push the codes to Git
 - Zip the files and submit to Canvas before 23:55
+
+![Submission Task](/docs/Assignment%20Submission%20Due.png)
