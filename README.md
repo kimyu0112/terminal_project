@@ -104,7 +104,12 @@ I have also broken it down into a list below:
 - Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
 
 #### User options - deadline 03/05/24
-- 
+- Complete coding for user options 1, 2, 3 or 4
+  - 1, 2, and 3 are features/functions of the app, while 4 allows users to exit the function
+- Write inline and block comments to explain code
+- Test the function to ensure function could work without any issues
+- Error handling using While True loop to ensure user enters valid option
+- Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
 
 #### User manual - deadline 04/05/24
 - 
