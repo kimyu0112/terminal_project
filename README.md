@@ -67,25 +67,47 @@ This project follows the [PEP 8](https://pep8.org/) style guide for Python code.
 
 ## Implementation Plan
 
-I utilized Trello platform to track implementation of my project. I have also broken it down into a list below:
+I utilized Trello platform to track implementation of my project. 
 
-#### Feature 1 - deadline 24/04/24
+
+
+I have also broken it down into a list below:
+
+#### Feature 1 display currency codes list - deadline 24/04/24
 - Complete coding (simple print function)
 - Write inline and block comments to explain code
 - Test the function to ensure function could work without any issues
 - Error handling if there are any
 - Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
 
-#### Feature 2
-- 
-#### Feature 3
+#### Priority feature 2 realtime currency converter - deadline 01/05/24 
+- Complete coding of function
+  - researched ways to ensure user input is valid (While True loop)
+  - ressearched how to fetch data from external API
+- Write inline and block comments to explain code
+- Test the function to ensure function could work without any issues
+- Error handling for:
+  - whether fetching of data from external API is successful
+  - other types of error thrown by users not anticipated
+- Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
+  
+#### Feature 3 historical currency converter - deadline 02/05/24
+- Complete coding of function
+  - researched ways to ensure user input is valid (done in feature 2)
+  - ressearched how to fetch data from external API (done in feature 2)
+- Write inline and block comments to explain code
+- Test the function to ensure function could work without any issues
+  - additional if/else statement to make sure app will not throw an error when user puts in a future date, and will return exchange rate based on current date
+- Error handling for:
+  - whether fetching of data from external API is successful
+  - other types of error thrown by users not anticipated
+- Check whether there are any typos and whether they follow PEP8 style guide (finalise coding)
+
+#### User options - deadline 03/05/24
 - 
 
-#### User options
+#### User manual - deadline 04/05/24
 - 
 
-#### User manual
-- 
-
-#### Assignment submission
+#### Assignment submission - deadline 05/05/24
 - 
