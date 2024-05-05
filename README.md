@@ -30,6 +30,8 @@ Installation of the above dependencies, if needed, are included in `run.sh` scri
 
 ## How to Run the Program
 
+This program requires internet connection to run.
+
 Windows users need to install Windows Subsystem for Linux (WSL) first(https://learn.microsoft.com/en-us/windows/wsl/install).
 
 1. Open a terminal.
@@ -39,6 +41,9 @@ Windows users need to install Windows Subsystem for Linux (WSL) first(https://le
     git clone https://github.com/kimyu0112/terminal_project.git
     ```
 3. Navigate to the `/src` folder.
+    ```sh
+    cd ./terminal_project
+    cd ./src
 
 4. Turn run.sh script into executable by using the following command:
     ```sh
@@ -55,11 +60,13 @@ Windows users need to install Windows Subsystem for Linux (WSL) first(https://le
   1. The function for the realtime currency converter includes a While True loop to ensure that users enter valid currency codes from the CURRENCY_LIST. If the user enters an invalid code, the app will display a list of valid codes and prompt the user to enter a valid code. The loop will continue until the user enters a valid code. This same logic is used for all user inputs in the app.
   2. After user input is validated, the system will fetch the real-time currency rate from an external API. If the fetching process is successful, which will be validated by an "if" function checking if the response code is 200, the system will print out the result of the currency conversion. Error handling is done through an "if/else" statement that checks if the data is fetched successfully, as well as through the use of "try/except" blocks to handle other exceptions.
 
-- **Historical currency converter**: same as realtime currency converter, with a few differences:
+- **Historical currency converter**: 
+  same as realtime currency converter, with a few differences:
   1. The app will prompt user to enter a historical date. The entered date will be converted into proper date format using functions from the built-in Python library called datetime.
   2. More error handling will be implemented using if/else statements. If the user mistakenly enters a future date, the app will detect it and return result based on the current date.
 
-- **List of currency codes**: a simple function is set up such that when it is called a list of currency codes is printed. The Pprint built-in python module is used in the app to provide users with clearer structure of the list, making it easier to check currency codes.
+- **List of currency codes**: 
+  a simple function is set up such that when it is called a list of currency codes is printed. The Pprint built-in python module is used in the app to provide users with clearer structure of the list, making it easier to check currency codes.
 
 ## Code Style Guide
 
